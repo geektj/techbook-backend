@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use('/', routes);
+app.use('/api', routes);
 
 const port = process.env.PORT;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

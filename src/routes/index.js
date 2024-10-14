@@ -3,9 +3,16 @@ const router = express.Router();
 
 
 // import controllers
+const authController = require('../controller/authController')
+
 
 // import middleware
 
-// routes
+// ----- routes ------ //
+
+// admin routes
+
+router.post('/admin/login', authController.login);
+
 
 module.exports = router;
