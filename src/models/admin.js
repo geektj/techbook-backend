@@ -40,14 +40,16 @@ adminSchema.statics.createDefaultAdmin = async function () {
   }
 };
 
-module.exports = mongoose.model("Admin", adminSchema);
+const Admin = mongoose.model("Admin", adminSchema);
+module.exports = Admin;
+// module.exports = mongoose.model("Admin", adminSchema);
 // const User = mongoose.model("Admin", adminSchema);
 
 // async function storeUser(email, password) {
 //   // Hash the password
 //   const hashedPassword = await bcrypt.hash(password, 10);
   
-//   const user = new User({ email, password: hashedPassword });
+//   const user = new Admin({ email, password: hashedPassword });
 //   try {
 //       await user.save();
 //       console.log('User saved successfully');
