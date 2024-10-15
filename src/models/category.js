@@ -1,32 +1,17 @@
 const mongoose = require("mongoose");
 
-const categorySchema = new mongoose.Schema(
-  {
-    // categoryId: {
-    //     type: Number,
-    //     requ
-    // },
-    categoryName: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    description: {
-      type: String,
-      unique: true,
-      trim: true,
-    },
-    imageUrl: {
-      type: String,
-      default: null, // URL to the image
-    },
+const categorySchema = new mongoose.Schema({
+  categoryName: {
+    type: String,
+    required: true,
   },
-  { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
-);
-
-// Virtual for id
-categorySchema.virtual("id").get(function () {
-  return this._id.toHexString();
+  description: {
+    type: String,
+    trim: true,
+  },
+  imageUrl: {
+    type: String,
+  },
 });
 
 const Category = mongoose.model("Category", categorySchema);
